@@ -3,6 +3,7 @@ from mandelbrot import mandelbrot
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import networkx as nx
 
 x_start, y_start = -2, -1.5  # an interesting region starts here
 width, height = 3, 3  # for 3 units up and right
@@ -33,4 +34,7 @@ def animate(i):
     return [img]
  
 anim = animation.FuncAnimation(fig, animate, frames=45, interval=120, blit=True)
-anim.save('mandelbrot.gif',writer='imagemagick')
+# anim.save('mandelbrot.gif')
+
+if __name__ == "__main__":
+    animate(10)
